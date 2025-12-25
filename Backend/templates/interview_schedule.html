@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Interview Schedule</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales-all.min.js"></script>
+<style>
+    body { padding: 30px; background: #f8f9fa; }
+    #calendar { max-width: 900px; margin: 0 auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<h2 class="mb-4">Interview Prep Schedule</h2>
+<a href="{{ url_for('generate_plan') }}" class="btn btn-primary mb-3">Generate My Plan</a>
+<div id="calendar"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var events = [
+        {% for s in schedule %}
+        {
+            id: '{{ s[0] }}',
+            title: '{{ s[1] }} - {{ s[4] }}',
+            start: '{{ s[3] }}',
+            url: '{{ s[2] }}',
+        },
+        {% endfor %}
+    ];
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        events: events,
+        eventClick: function(info) {
+            if (info.event.url) {
+                window.open(info.event.url, '_blank');
+                info.jsEvent.preventDefault();
+            }
+        }
+    });
+    calendar.render();
+});
+</script>
+</body>
+</html>

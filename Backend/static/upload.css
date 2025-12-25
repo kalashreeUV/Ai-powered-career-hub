@@ -1,0 +1,102 @@
+
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #4a90e2, #6a5af9);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-container {
+  width: 100%;
+  max-width: 450px;
+}
+
+.card {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 0.6rem;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1.8rem;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.file-box {
+  border: 2px dashed #6a5af9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: #6a5af9;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.file-box:hover {
+  background: #f5f3ff;
+}
+
+.file-box input {
+  display: none;
+}
+
+.btn {
+  background: linear-gradient(90deg, #4a90e2, #6a5af9);
+  color: white;
+  border: none;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.95;
+  transform: scale(1.03);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

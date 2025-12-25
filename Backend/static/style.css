@@ -1,0 +1,92 @@
+/* General Page Style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+/* Headings */
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Button */
+button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Links */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Flash Messages */
+.flash {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+.flash.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash.warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.flash.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.flash.info {
+    background-color: #cce5ff;
+    color: #004085;
+}

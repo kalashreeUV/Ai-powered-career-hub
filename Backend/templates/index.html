@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CareerHub.ai - AI Powered Career Hub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
+      color: #fff;
+    }
+
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    nav .buttons a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: #fff;
+      background: #ff9800;
+      padding: 8px 16px;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav .buttons a:hover {
+      background: #ff5722;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      animation: fadeInUp 1.5s ease;
+    }
+    .hero .cta {
+      display: flex;
+      gap: 20px;
+    }
+    .hero .cta a {
+      text-decoration: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .hero .cta .start {
+      background: #ff5722;
+      color: white;
+    }
+    .hero .cta .start:hover {
+      background: #e64a19;
+    }
+    .hero .cta .learn {
+      background: #03a9f4;
+      color: white;
+    }
+    .hero .cta .learn:hover {
+      background: #0288d1;
+    }
+
+    /* Features Section */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 60px 40px;
+      background: white;
+      color: #333;
+    }
+    .feature {
+      background: #f4f6ff;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .feature:hover {
+      transform: translateY(-8px);
+    }
+    .feature h3 {
+      color: #4e54c8;
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.4);
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h1>CareerHub.ai</h1>
+    <div class="buttons">
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('register') }}">Register</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Your AI-Powered Career Companion</h2>
+    <p>
+      The AI-Powered Career Hub is an intelligent platform designed to assist students, job seekers, 
+      and professionals in planning and advancing their careers. From resume checking to interview 
+      guidance, job matching, and personalized learning roadmaps — CareerHub.ai is your all-in-one 
+      solution for success.
+    </p>
+    <div class="cta">
+      <a href="{{ url_for('register') }}" class="start">Get Started</a>
+      <a href="#features" class="learn">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="feature">
+      <h3>📄 Resume Analyzer</h3>
+      <p>Get instant feedback on your resume's content, formatting, and clarity.</p>
+    </div>
+    <div class="feature">
+      <h3>🎯 Career Roadmap</h3>
+      <p>AI suggests career paths and highlights skill gaps for improvement.</p>
+    </div>
+    <div class="feature">
+      <h3>💼 Job Matching</h3>
+      <p>Find jobs aligned with your skills and rank opportunities smartly.</p>
+    </div>
+    <div class="feature">
+      <h3>🎤 Interview Prep</h3>
+      <p>Practice with AI-powered questions and improve your confidence.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 CareerHub.ai | Empowering Your Career with AI
+  </footer>
+
+</body>
+</html>

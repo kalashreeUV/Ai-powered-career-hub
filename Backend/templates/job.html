@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Matching</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+  <div class="card shadow-lg border-0">
+    <div class="card-header bg-success text-white text-center">
+      <h3 class="mb-0">💼 Job Recommendations</h3>
+    </div>
+    <div class="card-body p-4">
+
+      {% if user_skills %}
+        <p><strong>Your Skills:</strong> {{ user_skills | join(", ") }}</p>
+      {% else %}
+        <p class="text-danger">⚠️ Upload a resume first to see job matches.</p>
+      {% endif %}
+
+      {% if jobs %}
+        <div class="row">
+          {% for job in jobs %}
+          <div class="col-md-6 mb-4">
+            <div class="card shadow-sm border-0">
+              <div class="card-body">
+                <h5 class="card-title">{{ job.title }}</h5>
+                <p class="card-text">
+                  <strong>Company:</strong> {{ job.company }} <br>
+                  <strong>Location:</strong> {{ job.location }} <br>
+                  <strong>Skills:</strong> {{ job.skills | join(", ") }} <br>
+                  <span class="text-success"><strong>Matched:</strong> {{ job.matched_skills | join(", ") }}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="alert alert-warning text-center">
+          ❌ No matching jobs found. Try uploading a resume with more skills!
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="{{ url_for('dashboard') }}" class="btn btn-dark">⬅ Back to Dashboard</a>
+  </div>
+</div>
+
+</body>
+</html>
