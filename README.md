@@ -6,7 +6,6 @@
 **AI‑Powered Career Hub** is designed to assist students and professionals by providing personalized career recommendations and resources.  
 This project combines intelligent backend logic with AI integrations to offer career insights, job suggestions, and guidance based on user preferences and skills.
 
-> *(Add a project demo link here once deployed — e.g., GitHub Pages / Vercel / Render)*
 
 ## 📁 Project Structure
 ## Features
